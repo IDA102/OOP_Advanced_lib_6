@@ -7,5 +7,8 @@ Shape::Shape(const int a)
 		q = COLOR(a);
 	}
 }
-void Shape::WhereAmI()
-{printf("\nNow I am in class Shape\n");}
+bool Shape::operator==(const Shape &ps)
+{
+	if(typeid(this) == typeid(ps))	return true;
+	else	return false;
+}

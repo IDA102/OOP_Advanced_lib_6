@@ -65,26 +65,26 @@ List & List::operator=(List && s)
 	s.End.pPrev = &s.Head;
 	return *this;
 }
-void List::ATH(const Circle &p_C)
+void List::ATH(const Shape &p_C)
 {	
 	Node *prom = Head.pNext;
 	Head.pNext =  new Node(&Head,Head.pNext,&p_C);
 	prom->pPrev = Head.pNext;
 	m_size++;
 }
-void List::ATE(const Circle & p_C)
+void List::ATE(const Shape & p_C)
 {
 	Node *prom = End.pPrev;
 	End.pPrev = new Node(End.pPrev, &End, &p_C);
 	prom->pNext = End.pPrev;
 	m_size++;
 }
-bool List::DTO(const Circle & p_C)
+bool List::DTO(const Shape & p_C)
 {
 	Node *prom = Head.pNext;
 	while (prom->pNext != &this->End)//(prom->pNext != 0)
 	{
-		if (prom->m_Data == p_C)
+		if (prom->m_Data == p_C) 
 		{
 			prom = prom->pNext;
 			delete prom->pPrev;
@@ -98,7 +98,7 @@ bool List::DTO(const Circle & p_C)
 	}
 	return false;
 }
-int List::DTAE(const Circle & p_C)
+int List::DTAE(const Shape & p_C)
 {
 	int cnt = 0;
 	Node *prom = Head.pNext;
@@ -145,7 +145,7 @@ void List::SORT()
 			prom2 = prom->pNext;
 			for (size_t i = 0; i < m_size - k; i++)
 			{
-				if (prom2->m_Data.get() < prom->m_Data.get())
+				if (prom2->m_Data.get < prom->m_Data.get())
 				{
 					prom->pPrev->pNext = prom->pNext;
 					prom2->pPrev = prom->pPrev;

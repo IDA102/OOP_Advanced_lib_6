@@ -4,15 +4,15 @@
 {
 	os << ms.x << " " << ms.y;
 	return os;
-}*/
+}
 
-/*ostream& operator<<(ostream &os, const Circle &ms)
+ostream& operator<<(ostream &os, const Circle &ms)
 {
 	os << "radius = " << ms.radius << " " << "xy = " << ms.q;
 	return os;
-}*/
+}
 
-/*ostream& operator<<(ostream &os, const List &ms)
+ostream& operator<<(ostream &os, const List &ms)
 {
 	const List::Node *p = &ms.Head;
 	p = p->pNext;
@@ -26,16 +26,9 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	//Создаём тестовые объекты типа Rect и Circle
-		Rect RECT(0, 1, 2, 3, 1);//space 2
-		Circle CIRCLE(1, 1, 1, 5);
-		float R = RECT.space();
-		R = CIRCLE.space();
-		stop
 
-
-/*
 	List q;
+	/*
 	q.ATH(Circle(1, 1, 5));
 	q.ATH(Circle(1, 1, 6));
 	q.ATH(Circle(1, 1, 4));

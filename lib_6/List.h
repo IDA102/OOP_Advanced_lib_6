@@ -9,11 +9,11 @@ class List
 		friend class List;
 		Node* pPrev = 0;
 		Node* pNext = 0;
-		Circle m_Data;
+		Shape* m_Data = 0;
 		Node();
 		~Node();
-		Node(Node *p, Node *n, const Circle *ps);
-		bool operator==(const Circle *ps);
+		Node(Node *p, Node *n, const Shape &ps);
+		bool operator==(const Shape &ps);
 		friend class List;
 		
 		friend ostream& operator<<(ostream &os, const List &ms);
@@ -27,13 +27,12 @@ public:
 	List(List &&s);
 	List& operator=(const List &s);
 	List& operator=(List &&s);
-	void ATH(const Circle &p_C);
-	void ATE(const Circle &p_C);
-	bool DTO(const Circle &p_C);
-	int DTAE(const Circle &p_C);
+	void ATH(const Shape &p_C);
+	void ATE(const Shape &p_C);
+	bool DTO(const Shape &p_C);
+	int DTAE(const Shape &p_C);
 	bool DELITE_ALL();
 	void SORT();
 	int get_size();
 
 };
-

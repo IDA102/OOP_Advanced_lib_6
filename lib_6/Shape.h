@@ -8,7 +8,6 @@ class Shape
 	COLOR q = RED;
 public:
 	Shape(const int a = 0);
-	virtual void WhereAmI();
-	virtual void Inflate(const int) = 0;
+	bool operator==(const Shape &ps);
 };
 
