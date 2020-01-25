@@ -1,31 +1,40 @@
 #include "H.h"
 
-ostream& operator<<(ostream &os, const Point &ms)
+/*ostream& operator<<(ostream &os, const Point &ms)
 {
 	os << ms.x << " " << ms.y;
 	return os;
-}
+}*/
 
-ostream& operator<<(ostream &os, const Circle &ms)
+/*ostream& operator<<(ostream &os, const Circle &ms)
 {
 	os << "radius = " << ms.radius << " " << "xy = " << ms.q;
 	return os;
-}
+}*/
 
-ostream& operator<<(ostream &os, const List &ms)
+/*ostream& operator<<(ostream &os, const List &ms)
 {
 	const List::Node *p = &ms.Head;
 	p = p->pNext;
-	for (size_t i = 0; i < ms.m_size; i++)
+	for (size_t i = 0; i < ms.m_size-2; i++)
 	{
 		os << p->m_Data<< endl;
 		p = p->pNext;
 	}
 	return os;
-}
+}*/
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	//Создаём тестовые объекты типа Rect и Circle
+		Rect RECT(0, 1, 2, 3, 1);//space 2
+		Circle CIRCLE(1, 1, 1, 5);
+		float R = RECT.space();
+		R = CIRCLE.space();
+		stop
+
+
+/*
 	List q;
 	q.ATH(Circle(1, 1, 5));
 	q.ATH(Circle(1, 1, 6));
@@ -40,53 +49,20 @@ int _tmain(int argc, _TCHAR* argv[])
 	stop
 	q.SORT();
 	cout << q;
-	cout << "-------------------------------------------------------------" << endl;
 	stop
-	List g(q);
-	cout << g;
-	cout << "-------------------------------------------------------------" << endl;
+	//q.~List();
+	//stop
+	//bool w = q.DTO(Circle(1, 1, 1));
+	//int w = q.DTAE(Circle(1, 1, 1));
+	//bool w = q.DELITE_ALL();
+	//cout << q;
 	stop
-	g.DELITE_ALL();
-	cout << g;
-	cout << "-------------------------------------------------------------" << endl;
-	stop
-	g = q;
-	cout << g;
-	cout << "-------------------------------------------------------------" << endl;
-	stop
-	q.ATH(Circle(1, 1, 1));
-	q.ATH(Circle(1, 1, 1));
-	q.ATH(Circle(1, 1, 1));
-	cout << q;
-	cout << "-------------------------------------------------------------" << endl;
-	stop
-	bool w = q.DTO(Circle(1, 1, 1));
-	cout << q;
-	cout << "-------------------------------------------------------------" << endl;
-	stop
-	int ww = q.DTAE(Circle(1, 1, 1));
-	cout << q;
-	cout << "-------------------------------------------------------------" << endl;
-	stop
-	bool www = q.DELITE_ALL();
-	cout << q;
-	cout << "-------------------------------------------------------------" << endl;
-	stop
-
-	q.ATH(Circle(1, 1, 5));
-	q.ATH(Circle(1, 1, 6));
-	q.ATH(Circle(1, 1, 4));
-	q.ATH(Circle(1, 1, 3));
-	q.ATH(Circle(1, 1, 8));
-	q.ATH(Circle(1, 1, 1));
-	q.ATE(Circle(1, 1, 7));
-	q.ATE(Circle(1, 1, 2));
 // вывод в файл
 	ofstream fout("qwe");
 	fout << q << endl;
 	fout.close();
 	stop
-	bool wwwww = q.DELITE_ALL();
+	bool w = q.DELITE_ALL();
 //Вывод из файла
 	char buff[80] = {'0'};
 	int MASS[11][3];
@@ -108,10 +84,12 @@ int _tmain(int argc, _TCHAR* argv[])
 			i++;
 		}	
 	}
-	cout << q;
-	cout << "-------------------------------------------------------------" << endl;
 	stop
+	cout << q;
 
-
+	List r(q);
+	cout << r;
+	stop
+*/
 	return 0;
 }

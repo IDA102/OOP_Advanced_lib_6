@@ -8,4 +8,7 @@
 #include <fstream>
 #include <iostream>
 using namespace std;
-#include "List.h"
+
+#include "Shape.h"
+#include "Rect.h"
+#include "Circle.h"

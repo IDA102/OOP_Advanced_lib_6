@@ -1,55 +1,25 @@
 #include "Circle.h"
+Circle::Circle(int color, int x_1, int y_1, int m_radius) :Shape(color)
+{
+	if ((x_1 > 0) & (y_1 > 0) & (m_radius > 0))
+	{
+		x1 = x_1;
+		y1 = y_1;
+		radius = m_radius;
+	}
+	else { cout << "\nERROR PARAMETERS CIRCLE\n" ;}
+}
+float Circle::space()
+{
 
-Circle::Circle() {}
-Circle::Circle(int x, int y, int r) :q(x, y)
-{
-	radius = r;
-};
-Circle::Circle(Point * p, int r)
-{
-	q = *p;
-	radius = r;
+	return (radius*radius*3.14);
 }
-Circle::Circle(const Circle & s)
+void Circle::WhereAmI()
 {
-	q = s.q;
-	radius = s.radius;
+	printf("\nNow I am in class Circle\n");
 }
-Circle::Circle(Circle && s)
+void Circle::Inflate(int a)
 {
-	int prom = s.radius;
-	radius = s.radius;
-	s.radius = prom;
-	q = s.q;
-};
-int Circle::get()
-{
-	return radius;
+	if(a > 0)	radius = radius + a;
+	else	 cout << "\nERROR PARAMETER INFLATE CIRCLE\n";
 }
-Circle & Circle::operator=(const Circle &s)
-{
-	q = s.q;
-	radius = s.radius;
-	return *this;
-}
-Circle & Circle::operator=(Circle &&s)
-{
-	int prom = s.radius;
-	radius = s.radius;
-	s.radius = prom;
-	Point p_prom = q;
-	q = s.q;
-	s.q = p_prom;
-	return *this;
-}
-bool Circle::operator==(const Circle &s)
-{
-	if ((radius == s.radius) && (q == s.q))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-};
