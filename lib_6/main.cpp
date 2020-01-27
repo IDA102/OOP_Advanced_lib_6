@@ -26,8 +26,13 @@ ostream& operator<<(ostream &os, const List &ms)
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	Circle q;
+	Rect w;
 
-	List q;
+	static_cast<Shape>(q);
+	Shape e = static_cast<Shape>(q);
+	stop
+	//List q;
 	/*
 	q.ATH(Circle(1, 1, 5));
 	q.ATH(Circle(1, 1, 6));
