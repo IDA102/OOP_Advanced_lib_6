@@ -79,7 +79,7 @@ List & List::operator=(List && s)
 }
 */
 
-void List::ATH(const Shape &p_S)//------------В Shape и Rect добавить const Методы присваивания
+void List::ATH(const Shape &p_S)
 {	
 	Node *prom = Head.pNext;
 	Head.pNext =  new Node(&Head,Head.pNext,&p_S);

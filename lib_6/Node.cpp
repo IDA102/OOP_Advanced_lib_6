@@ -1,25 +1,24 @@
 #include "List.h"
 
-/*
+
 List::Node::~Node() 
 {
 	if ((this->pNext != 0)&& (this->pPrev != 0))
 	{
-		stop
 		pPrev->pNext = pNext;
 		pNext->pPrev = pPrev;
+		delete m_Data;
 	}
 
 
 };
-*/
 
 
 List::Node::Node(Node *p, Node *n,const Shape *ps)
 {
 	pPrev = p;
 	pNext = n;
-	m_Data = ps;
+	if (ps != 0) { m_Data = ps->COPY(); }
 }
 
 

@@ -39,17 +39,16 @@ int _tmain(int argc, _TCHAR* argv[])
 */
 
 	List q;
+	q.ATH(Circle(1, 1, 1, 5));
+	q.ATH(Circle(1, 1, 1, 6));
+	q.ATH(Circle(1, 1, 1, 4));
+	q.ATH(Circle(1, 1, 1, 3));
+	q.ATH(Circle(1, 1, 1, 8));
+	q.ATH(Circle(1, 1, 1, 1));
 	stop
-
-	q.ATH(Circle(1, 1, 5));
 	/*
-	q.ATH(Circle(1, 1, 6));
-	q.ATH(Circle(1, 1, 4));
-	q.ATH(Circle(1, 1, 3));
-	q.ATH(Circle(1, 1, 8));
-	q.ATH(Circle(1, 1, 1));
-	q.ATE(Circle(1, 1, 7));
-	q.ATE(Circle(1, 1, 2));
+	q.ATE(Circle(1, 1, 1, 7));
+	q.ATE(Circle(1, 1, 1, 2));
 	cout << q;
 	cout << "-------------------------------------------------------------" << endl;
 	stop

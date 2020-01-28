@@ -9,6 +9,11 @@ Circle::Circle(int color, int x_1, int y_1, int m_radius) :Shape(color)
 	}
 	else { cout << "\nERROR PARAMETERS CIRCLE\n" ;}
 }
+Shape* Circle::COPY() const
+{
+	return new Circle(*this);
+}
+
 float Circle::space()
 {
 

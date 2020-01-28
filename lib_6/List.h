@@ -10,10 +10,10 @@ class List
 		Node* pPrev = 0;
 		Node* pNext = 0;
 		Shape *m_Data = 0;
-		//~Node();
-		Node(Node *p, Node *n,const Shape *ps);
+		~Node();
+		Node(Node *p = 0 , Node *n = 0 , const Shape *ps = 0);
+
 		//bool operator==(const Circle *ps);
-		//friend class List;
 		//friend ostream& operator<<(ostream &os, const List &ms);
 	};
 	Node Head;

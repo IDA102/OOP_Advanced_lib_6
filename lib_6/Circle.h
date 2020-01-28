@@ -7,6 +7,7 @@ class Circle : public Shape
 	int radius = 0;
 public:
 	Circle(const int color = 0, const int x_1 = 0, const int y_1 = 0, const int m_radius = 0);
+	virtual Shape* COPY() const;
 	virtual float space();
 	virtual void Inflate(const int a = 0);
 };

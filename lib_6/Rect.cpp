@@ -1,4 +1,5 @@
 #include "Rect.h"
+
 Rect::Rect(int color, int x_1, int y_1, int x_2, int y_2) : Shape(color)
 {
 	if ( (x_1 > 0) & (x_2 > 0) & (y_1 > 0) & (y_2 > 0) & (x_2 > x_1) & (y_1 > y_2) )
@@ -9,6 +10,10 @@ Rect::Rect(int color, int x_1, int y_1, int x_2, int y_2) : Shape(color)
 		y2 = y_2;
 	}
 	else { cout << "\nERROR PARAMETERS RECT\n"; }
+}
+Shape* Rect::COPY() const
+{
+	return new Rect(*this);
 }
 float Rect::space()
 {
