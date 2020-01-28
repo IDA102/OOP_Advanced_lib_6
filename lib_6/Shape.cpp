@@ -7,8 +7,4 @@ Shape::Shape(const int a)
 		q = COLOR(a);
 	}
 }
-/*bool Shape::operator==(const Shape &ps)
-{
-	if(typeid(this) == typeid(ps))	return true;
-	else	return false;
-}*/
+

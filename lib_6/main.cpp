@@ -26,15 +26,23 @@ ostream& operator<<(ostream &os, const List &ms)
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+/*
 	Circle q;
 	Rect w;
-
-	static_cast<Shape>(q);
-	Shape e = static_cast<Shape>(q);
+	Shape &e = q;
+	cout << typeid(e).name()<<"\n";//Circle
+	Shape *pZ = new Circle;
+	cout << typeid(pZ).name() << "\n";//Shape *
+	cout << typeid(*pZ).name() << "\n";//Circle
+	int t = typeid(Rect).before(typeid(Shape));
 	stop
-	//List q;
-	/*
+*/
+
+	List q;
+	stop
+
 	q.ATH(Circle(1, 1, 5));
+	/*
 	q.ATH(Circle(1, 1, 6));
 	q.ATH(Circle(1, 1, 4));
 	q.ATH(Circle(1, 1, 3));

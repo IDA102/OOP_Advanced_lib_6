@@ -12,7 +12,7 @@ Rect::Rect(int color, int x_1, int y_1, int x_2, int y_2) : Shape(color)
 }
 float Rect::space()
 {
-	return (x1-x2)*(y2-y1);
+	return (float)(x1-x2)*(y2-y1);
 }
 void Rect::Inflate(int a)
 {
