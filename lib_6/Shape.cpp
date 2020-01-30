@@ -7,4 +7,3 @@ Shape::Shape(const int a)
 		q = COLOR(a);
 	}
 }
-

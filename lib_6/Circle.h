@@ -8,8 +8,8 @@ class Circle : public Shape
 public:
 	Circle(const int color = 0, const int x_1 = 0, const int y_1 = 0, const int m_radius = 0);
 	virtual Shape* COPY() const;
-	virtual float space();
+	virtual float space() const;
 	virtual void Inflate(const int a = 0);
+	virtual bool operator ==(const Shape *p_S) const; 
 	friend ostream& operator<<(ostream& os, const Circle &ms);
-
 };

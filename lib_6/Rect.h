@@ -9,7 +9,8 @@ class Rect : public Shape
 public:
 	Rect(int color = 0, int x_1 = 0, int y_1 = 0, int x_2 = 0, int y_2 = 0);
 	virtual Shape* COPY() const;
-	virtual float space();
+	virtual float space() const;
 	virtual void Inflate(const int a = 0);
+	virtual bool operator ==(const Shape *p_S) const;
 	friend ostream& operator<<(ostream& os, const Rect &ms);
 };

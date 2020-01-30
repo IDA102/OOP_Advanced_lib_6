@@ -13,14 +13,21 @@ Shape* Circle::COPY() const
 {
 	return new Circle(*this);
 }
-
-float Circle::space()
+float Circle::space() const
 {
-
 	return (radius*radius*3.14);
 }
 void Circle::Inflate(int a)
 {
 	if(a > 0)	radius = radius + a;
 	else	 cout << "\nERROR PARAMETER INFLATE CIRCLE\n";
+}
+bool Circle::operator==(const Shape * p_S) const
+{
+	if (typeid(Circle) == typeid(*p_S))// Пришлось кастовать, т.к. нельзя перегрузить в Shape из-за типа параметра
+	{
+		const Circle *prom = dynamic_cast<const Circle*>(p_S);
+		if ((q == prom->q) && (x1 == prom->x1) && (y1 == prom->y1) && (radius == prom->radius))	return true;
+		else																					return false;
+	}
 }

@@ -91,13 +91,12 @@ void List::ATE(const Shape &p_S)
 	m_size++;
 }
 
-/*
-bool List::DTO(const Circle & p_C)
+/*bool List::DTO(Shape &p_S)
 {
 	Node *prom = Head.pNext;
 	while (prom->pNext != &this->End)//(prom->pNext != 0)
 	{
-		if (prom->m_Data == p_C)
+		if (*prom->m_Data == p_S)
 		{
 			prom = prom->pNext;
 			delete prom->pPrev;
@@ -110,8 +109,7 @@ bool List::DTO(const Circle & p_C)
 		}
 	}
 	return false;
-}
-*/
+}*/
 
 /*
 int List::DTAE(const Circle & p_C)
@@ -167,7 +165,7 @@ void List::SORT()
 			prom2 = prom->pNext;
 			for (size_t i = 0; i < m_size - k; i++)
 			{
-				if (prom2->m_Data.get() < prom->m_Data.get())
+				if (prom2->m_Data->space() < prom->m_Data->space())
 				{
 					prom->pPrev->pNext = prom->pNext;
 					prom2->pPrev = prom->pPrev;

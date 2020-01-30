@@ -27,7 +27,7 @@ public:
 	//List& operator=(List &&s);
 	void ATH(const Shape &p_S);
 	void ATE(const Shape &p_S);
-	//bool DTO(const Circle &p_C);
+	//bool DTO(Shape &p_S);
 	//int DTAE(const Circle &p_C);
 	//bool DELITE_ALL();
 	void SORT();

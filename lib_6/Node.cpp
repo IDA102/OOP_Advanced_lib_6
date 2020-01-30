@@ -13,7 +13,6 @@ List::Node::~Node()
 
 };
 
-
 List::Node::Node(Node *p, Node *n,const Shape *ps)
 {
 	pPrev = p;

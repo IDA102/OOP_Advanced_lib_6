@@ -15,7 +15,7 @@ Shape* Rect::COPY() const
 {
 	return new Rect(*this);
 }
-float Rect::space()
+float Rect::space() const
 {
 	return (float)(x1-x2)*(y2-y1);
 }
@@ -27,4 +27,13 @@ void Rect::Inflate(int a)
 		x2 = x2 + a;
 	}
 	else { cout << "\nERROR PARAMETER INFLATE RECT\n"; }
+}
+bool Rect::operator==(const Shape *p_S) const
+{
+	if (typeid(Rect) == typeid(*p_S))// Пришлось кастовать, т.к. нельзя перегрузить в Shape из-за типа параметра
+	{
+		const Rect *prom = dynamic_cast<const Rect*>(p_S);
+		if ((q ==  prom->q) && (x1 == prom->x1) && (x2 == prom->x2) && (y1 == prom->y1) && (y2 == prom->y2))	return true;
+		else																									return false;
+	}
 }

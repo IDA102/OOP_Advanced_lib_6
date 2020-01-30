@@ -8,10 +8,9 @@ ostream& operator<<(ostream &os, const Circle &ms)
 
 ostream& operator<<(ostream &os, const Rect &ms)
 {
-	os << "Rect-------" << "COLOR = " << ms.q << "	x1 = " << ms.x1 << "	y1 " << ms.y1 << "	y1 = " << ms.y1 << "	y2 = " << ms.y2 << endl;
+	os << "Rect-------" << "COLOR = " << ms.q << "	x1 = " << ms.x1 << "	y1 = " << ms.y1 << "	x2 = " << ms.x2 << "	y2 = " << ms.y2 << endl;
 	return os;
 }
-
 
 ostream& operator<<(ostream &os, const List &ms)
 {
@@ -52,17 +51,22 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout << q;
 	cout << "-------------------------------------------------------------" << endl;
 	stop
+	cout << "—ортировка по площади" << endl;
 	q.SORT();
 	cout << q;
+	cout << "-------------------------------------------------------------" << endl;
 	stop
-	/*
-	//q.~List();
-	//stop
-	//bool w = q.DTO(Circle(1, 1, 1));
+	cout << "”ничтожение первого в списке похожего" << endl;
+	//bool w = q.DTO(Circle(1, 1, 1, 5));
+	cout << q;
+	cout << "-------------------------------------------------------------" << endl;
+	stop
+
 	//int w = q.DTAE(Circle(1, 1, 1));
 	//bool w = q.DELITE_ALL();
 	//cout << q;
 	stop
+/*
 // вывод в файл
 	ofstream fout("qwe");
 	fout << q << endl;
