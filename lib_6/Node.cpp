@@ -18,7 +18,12 @@ List::Node::Node(Node *p, Node *n,const Shape *ps)
 {
 	pPrev = p;
 	pNext = n;
-	if (ps != 0) { m_Data = ps->COPY(); }
+	if (ps != 0)
+	{
+		m_Data = ps->COPY();
+		p->pNext = this;
+		n->pPrev = this;
+	}
 }
 
 

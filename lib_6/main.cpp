@@ -1,60 +1,61 @@
 #include "H.h"
 
-/*ostream& operator<<(ostream &os, const Point &ms)
+ostream& operator<<(ostream &os, const Circle &ms)
 {
-	os << ms.x << " " << ms.y;
+	os << "Circle-----" << "COLOR = "<< ms.q << "	x1 = " << ms.x1  << "	y1 = " << ms.y1 << "	radius = " << ms.radius << endl;
 	return os;
 }
 
-ostream& operator<<(ostream &os, const Circle &ms)
+ostream& operator<<(ostream &os, const Rect &ms)
 {
-	os << "radius = " << ms.radius << " " << "xy = " << ms.q;
+	os << "Rect-------" << "COLOR = " << ms.q << "	x1 = " << ms.x1 << "	y1 " << ms.y1 << "	y1 = " << ms.y1 << "	y2 = " << ms.y2 << endl;
 	return os;
 }
+
 
 ostream& operator<<(ostream &os, const List &ms)
 {
 	const List::Node *p = &ms.Head;
 	p = p->pNext;
-	for (size_t i = 0; i < ms.m_size-2; i++)
+	for (size_t i = 0; i < ms.m_size; i++)
 	{
-		os << p->m_Data<< endl;
-		p = p->pNext;
+			if (typeid(*p->m_Data) == typeid(Rect))
+			{
+				Rect *pR = dynamic_cast<Rect*>(p->m_Data);
+				os << *pR << endl;
+			}
+			else
+			{
+				Circle *pC = dynamic_cast<Circle*>(p->m_Data);
+				os << *pC << endl;
+			}	
+			p = p->pNext;
 	}
 	return os;
-}*/
+}
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-/*
-	Circle q;
-	Rect w;
-	Shape &e = q;
-	cout << typeid(e).name()<<"\n";//Circle
-	Shape *pZ = new Circle;
-	cout << typeid(pZ).name() << "\n";//Shape *
-	cout << typeid(*pZ).name() << "\n";//Circle
-	int t = typeid(Rect).before(typeid(Shape));
-	stop
-*/
-
+	setlocale(LC_ALL, "Russian");
+	
 	List q;
 	q.ATH(Circle(1, 1, 1, 5));
-	q.ATH(Circle(1, 1, 1, 6));
+	q.ATH(Rect(1, 1, 6, 2, 1));
 	q.ATH(Circle(1, 1, 1, 4));
-	q.ATH(Circle(1, 1, 1, 3));
+	q.ATH(Rect(1, 1, 6, 2, 1));
 	q.ATH(Circle(1, 1, 1, 8));
 	q.ATH(Circle(1, 1, 1, 1));
-	stop
-	/*
-	q.ATE(Circle(1, 1, 1, 7));
+	q.ATE(Circle(1, 1, 1, 7));                                                                                                                                                                                                                                     
 	q.ATE(Circle(1, 1, 1, 2));
+	stop
+	cout << "Вывод списка" << endl << endl;
 	cout << q;
 	cout << "-------------------------------------------------------------" << endl;
 	stop
 	q.SORT();
 	cout << q;
 	stop
+	/*
 	//q.~List();
 	//stop
 	//bool w = q.DTO(Circle(1, 1, 1));

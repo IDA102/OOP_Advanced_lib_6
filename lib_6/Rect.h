@@ -11,4 +11,5 @@ public:
 	virtual Shape* COPY() const;
 	virtual float space();
 	virtual void Inflate(const int a = 0);
+	friend ostream& operator<<(ostream& os, const Rect &ms);
 };

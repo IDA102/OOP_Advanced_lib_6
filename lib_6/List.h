@@ -3,7 +3,7 @@
 #include "Circle.h"
 class List
 {
-	//friend ostream& operator<<(ostream &os, const List &ms);
+	friend ostream& operator<<(ostream &os, const List &ms);
 	class Node
 	{
 		friend class List;
@@ -14,7 +14,7 @@ class List
 		Node(Node *p = 0 , Node *n = 0 , const Shape *ps = 0);
 
 		//bool operator==(const Circle *ps);
-		//friend ostream& operator<<(ostream &os, const List &ms);
+		friend ostream& operator<<(ostream &os, const List &ms);
 	};
 	Node Head;
 	Node End;
@@ -26,11 +26,11 @@ public:
 	//List& operator=(const List &s);
 	//List& operator=(List &&s);
 	void ATH(const Shape &p_S);
-	//void ATE(const Circle &p_C);
+	void ATE(const Shape &p_S);
 	//bool DTO(const Circle &p_C);
 	//int DTAE(const Circle &p_C);
 	//bool DELITE_ALL();
-	//void SORT();
+	void SORT();
 	//int get_size();
 
 };

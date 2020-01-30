@@ -81,21 +81,15 @@ List & List::operator=(List && s)
 
 void List::ATH(const Shape &p_S)
 {	
-	Node *prom = Head.pNext;
-	Head.pNext =  new Node(&Head,Head.pNext,&p_S);
-	prom->pPrev = Head.pNext;
+	new Node(&Head,Head.pNext,&p_S);
 	m_size++;
 }
 
-/*
-void List::ATE(const Circle & p_C)
+void List::ATE(const Shape &p_S)
 {
-	Node *prom = End.pPrev;
-	End.pPrev = new Node(End.pPrev, &End, &p_C);
-	prom->pNext = End.pPrev;
+	new Node(End.pPrev, &End, &p_S);
 	m_size++;
 }
-*/
 
 /*
 bool List::DTO(const Circle & p_C)
@@ -157,7 +151,7 @@ bool List::DELITE_ALL()
 }
 */
 
-/*
+
 void List::SORT()
 {
 	int k = 1;
@@ -195,7 +189,6 @@ void List::SORT()
 	}
 
 }
-*/
 
 /*
 int List::get_size()
