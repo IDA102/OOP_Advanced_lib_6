@@ -8,6 +8,7 @@ List::Node::~Node()
 		pPrev->pNext = pNext;
 		pNext->pPrev = pPrev;
 		delete m_Data;
+		m_Data = 0;
 	}
 
 

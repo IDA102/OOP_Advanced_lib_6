@@ -6,9 +6,6 @@ List::List()
 	Head.pNext = &End;
 	End.pPrev = &Head;
 }
-
-
-/*
 List::List(const List &s)
 {
 	Head.pNext = &End;
@@ -18,17 +15,14 @@ List::List(const List &s)
 	Node *prom2 = s.Head.pNext;
 	for (size_t i = 0; i < s.m_size; i++)
 	{
-		ATE(prom2->m_Data);
+		ATE(*(prom2->m_Data));
 		prom2 = prom2->pNext;
 	}
 }
-*/
-
-/*
-List::List(List && s)//ƒописать удаление своих данных, дл€ предотвращени€ утечки
+List::List(List &&s)//ƒописать удаление своих данных, дл€ предотвращени€ утечки
 {
 	//Clear
-	DELITE_ALL();
+	if(this->m_size != 0) DELITE_ALL();
 	//»зымаем
 	Head.pNext = s.Head.pNext;
 	End.pPrev = s.End.pPrev;
@@ -39,33 +33,28 @@ List::List(List && s)//ƒописать удаление своих данных, дл€ предотвращени€ утечки
 	s.Head.pNext = &s.End;
 	s.End.pPrev = &s.Head;
 
+	int q = this->m_size;
 	this->m_size = s.m_size;
-
+	s.m_size = q;
 }
-*/
-
-/*
 List& List::operator=(const List & s)
 {
 	if (this != &s)
 	{
-		this->DELITE_ALL();
+		if (this->m_size != 0) this->DELITE_ALL();
 
 		Node *prom2 = s.Head.pNext;
 		for (size_t i = 0; i < s.m_size; i++)
 		{
-			ATE(prom2->m_Data);
+			ATE(*(prom2->m_Data));
 			prom2 = prom2->pNext;
 		}
 	}
 	return *this;
 }
-*/
-
-/*
 List & List::operator=(List && s)
 {	//Clear
-	this->DELITE_ALL();
+	if (this->m_size != 0) this->DELITE_ALL();
 	//»зымаем
 	Head.pNext = s.Head.pNext;
 	End.pPrev = s.End.pPrev;
@@ -75,30 +64,51 @@ List & List::operator=(List && s)
 
 	s.Head.pNext = &s.End;
 	s.End.pPrev = &s.Head;
+
+	int q = this->m_size;
+	this->m_size = s.m_size;
+	s.m_size = q;
+	
 	return *this;
 }
-*/
-
+bool List::operator==(const List &s)
+{
+	if ( this->m_size == s.m_size)
+	{
+		int i = m_size;
+		Node *prom = this->Head.pNext;
+		Node *prom2 = s.Head.pNext;
+		do
+		{
+			if (*(prom->m_Data) != prom2->m_Data) { return false; }
+			prom = prom->pNext;
+			prom2 = prom2->pNext;
+			i--;
+		} while (i != 0);
+		return  true;
+	}
+	else return false;
+}
 void List::ATH(const Shape &p_S)
 {	
 	new Node(&Head,Head.pNext,&p_S);
 	m_size++;
 }
-
 void List::ATE(const Shape &p_S)
 {
 	new Node(End.pPrev, &End, &p_S);
 	m_size++;
 }
-
-/*bool List::DTO(Shape &p_S)
+bool List::DTO(const Shape &p_S)
 {
 	Node *prom = Head.pNext;
 	while (prom->pNext != &this->End)//(prom->pNext != 0)
 	{
-		if (*prom->m_Data == p_S)
+		if ( *(prom->m_Data) == &p_S)
 		{
 			prom = prom->pNext;
+			delete prom->pPrev->m_Data;
+			prom->pPrev->m_Data = 0;
 			delete prom->pPrev;
 			m_size--;
 			return true;
@@ -109,18 +119,18 @@ void List::ATE(const Shape &p_S)
 		}
 	}
 	return false;
-}*/
-
-/*
-int List::DTAE(const Circle & p_C)
+}
+int List::DTAE(const Shape & p_S)
 {
 	int cnt = 0;
 	Node *prom = Head.pNext;
 	while (prom->pNext != 0)
 	{
-		if (prom->m_Data == p_C)
+		if (*(prom->m_Data) == &p_S)
 		{
 			prom = prom->pNext;
+			delete prom->pPrev->m_Data;
+			prom->pPrev->m_Data = 0;
 			delete prom->pPrev;
 			m_size--;
 			cnt++;
@@ -132,14 +142,13 @@ int List::DTAE(const Circle & p_C)
 	}
 	return cnt;
 }
-*/
-
-/*
 bool List::DELITE_ALL()
 {
 	Node *prom = Head.pNext;
 	while (prom->pNext != 0)
 	{
+		delete prom->m_Data;
+		prom->m_Data = 0;
 		delete prom;
 		m_size--;
 		prom = Head.pNext;
@@ -147,9 +156,6 @@ bool List::DELITE_ALL()
 	prom = 0;
 	return true;
 }
-*/
-
-
 void List::SORT()
 {
 	int k = 1;

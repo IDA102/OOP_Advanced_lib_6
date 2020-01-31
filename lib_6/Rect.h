@@ -11,6 +11,7 @@ public:
 	virtual Shape* COPY() const;
 	virtual float space() const;
 	virtual void Inflate(const int a = 0);
-	virtual bool operator ==(const Shape *p_S) const;
+	virtual bool operator ==(const Shape *p_S);
+	virtual bool operator !=(const Shape *p_S);
 	friend ostream& operator<<(ostream& os, const Rect &ms);
 };

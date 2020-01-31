@@ -28,7 +28,7 @@ void Rect::Inflate(int a)
 	}
 	else { cout << "\nERROR PARAMETER INFLATE RECT\n"; }
 }
-bool Rect::operator==(const Shape *p_S) const
+bool Rect::operator==(const Shape *p_S)
 {
 	if (typeid(Rect) == typeid(*p_S))// Пришлось кастовать, т.к. нельзя перегрузить в Shape из-за типа параметра
 	{
@@ -36,4 +36,15 @@ bool Rect::operator==(const Shape *p_S) const
 		if ((q ==  prom->q) && (x1 == prom->x1) && (x2 == prom->x2) && (y1 == prom->y1) && (y2 == prom->y2))	return true;
 		else																									return false;
 	}
+	else return false;
+}
+bool Rect::operator!=(const Shape * p_S)
+{
+	if (typeid(Rect) == typeid(*p_S))// Пришлось кастовать, т.к. нельзя перегрузить в Shape из-за типа параметра
+	{
+		const Rect *prom = dynamic_cast<const Rect*>(p_S);
+		if ((q == prom->q) && (x1 == prom->x1) && (x2 == prom->x2) && (y1 == prom->y1) && (y2 == prom->y2))	return false;
+		else																								return true;
+	}
+	else return true;
 }

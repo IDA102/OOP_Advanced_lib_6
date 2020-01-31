@@ -12,8 +12,8 @@ public:
 	virtual float space() const = 0;
 	virtual Shape *COPY() const = 0;
 	virtual void Inflate(const int) = 0;
-	virtual bool operator ==(const Shape *p_S) const = 0;
-
+	virtual bool operator != (const Shape *p_S) = 0;
+	virtual bool operator == (const Shape *p_S) = 0;
 };
 
  
