@@ -22,6 +22,14 @@ void Circle::Inflate(int a)
 	if(a > 0)	radius = radius + a;
 	else	 cout << "\nERROR PARAMETER INFLATE CIRCLE\n";
 }
+/*Shape& Circle::operator=(const Circle &s)
+{
+	q = s.q;
+	x1 = s.x1;
+	y1 = s.y1;
+	this->radius = s.radius;
+	return *this;
+}*/
 bool Circle::operator==(const Shape * p_S)
 {
 	if (typeid(Circle) == typeid(*p_S))// Пришлось кастовать, т.к. нельзя перегрузить в Shape из-за типа параметра

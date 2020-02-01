@@ -69,7 +69,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout << "-------------------------------------------------------------" << endl;
 	stop
 	cout << "Удаляем всё кроме стражей" << endl << endl;
-	bool w = q.DELITE_ALL();
+	bool w = q.DELETE_ALL();
 	cout << q;
 	cout << "-------------------------------------------------------------" << endl;
 	stop
@@ -96,7 +96,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	cout << h;
 	cout << "-------------------------------------------------------------" << endl;
 	stop
-	cout << "Сравниваем два List по разным признакам" << endl << endl;
+	cout << "Сравниваем два List по разным признакам(Размеру, Data)" << endl << endl;
 	cout << h;
 	cout << "-------------------------------------------------------------" << endl;
 	cout << g;
@@ -106,13 +106,43 @@ int _tmain(int argc, _TCHAR* argv[])
 	h.ATE(Circle(1, 1, 1, 3));
 	k = (h == g);
 	stop
+	cout << "Проверка опреатора присваивания List" << endl << endl;
+	List q1;
+	List q2;
+	q1.ATH(Circle(1, 1, 1, 5));
+	q1.ATH(Circle(1, 1, 1, 5));
+	q1.ATH(Rect(1, 1, 6, 2, 1));
+	q1.ATH(Circle(1, 1, 1, 4));
+	q1.ATH(Rect(1, 1, 6, 2, 1));
+	q1.ATH(Circle(1, 1, 1, 8));
+	q1.ATH(Circle(1, 1, 1, 1));
+	q1.ATH(Circle(1, 1, 1, 7));
+	q1.ATH(Circle(1, 1, 1, 2));
+
+	q2.ATH(Circle(1, 1, 1, 100));
+	q2.ATH(Circle(1, 1, 1, 200));
+	q2.ATH(Circle(1, 1, 1, 300));
+	q2.ATH(Circle(1, 1, 1, 400));
+	q2.ATH(Circle(1, 1, 1, 500));
+	q2.ATH(Circle(1, 1, 1, 600));
+	q2.ATH(Circle(1, 1, 1, 700));
+
+	cout << q1;
+	cout << "-------------------------------------------------------------" << endl;
+	cout << q2;
+	cout << "-------------------------------------------------------------" << endl;
+	stop
+	q2 = q1;
+	cout << q2;
+	cout << "-------------------------------------------------------------" << endl;
+	stop
 
 // вывод в файл
 	ofstream fout("qwe");
 	fout << h << endl;
 	fout.close();
 	stop
-	bool o = q.DELITE_ALL();
+	bool o = q.DELETE_ALL();
 //Вывод из файла
 	char buff[80] = {'0'};
 	int MASS[11][3];

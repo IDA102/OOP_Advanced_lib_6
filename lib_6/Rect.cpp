@@ -28,6 +28,15 @@ void Rect::Inflate(int a)
 	}
 	else { cout << "\nERROR PARAMETER INFLATE RECT\n"; }
 }
+/*Shape & Rect::operator=(const Rect &s)
+{
+	q = s.q;
+	x1 = s.x1;
+	x2 = s.x2;
+	y1 = s.y1;
+	y2 = s.y2;
+	return *this;
+}*/
 bool Rect::operator==(const Shape *p_S)
 {
 	if (typeid(Rect) == typeid(*p_S))// Пришлось кастовать, т.к. нельзя перегрузить в Shape из-за типа параметра

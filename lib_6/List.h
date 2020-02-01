@@ -28,10 +28,12 @@ public:
 	void ATH(const Shape &p_S);//Добавить объект в начало
 	void ATE(const Shape &p_S);//Добавить объект в конец
 	bool DTO(const Shape &p_S);//Удалить 1 найденный элемент
+	bool DELETE_ONE();//Удалить 1 элемент с начала List
+	bool DELETE_DATA(Node &r_N);//Удалить данное из элемента Node списка List
 	int DTAE(const Shape &p_S);//Удалить все найденные элементы
-	bool DELITE_ALL();
+	bool DELETE_ALL();//Очищает List
 	void SORT();//Сортировка по площади
+	void RECOPPY(const List &s);//Копирование без удаления
 	//int get_size();
-
 };
 
