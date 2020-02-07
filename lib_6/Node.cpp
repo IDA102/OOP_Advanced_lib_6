@@ -10,10 +10,7 @@ List::Node::~Node()
 		delete m_Data;
 		m_Data = 0;
 	}
-
-
 };
-
 List::Node::Node(Node *p, Node *n,const Shape *ps)
 {
 	pPrev = p;

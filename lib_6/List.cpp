@@ -65,7 +65,7 @@ List& List::operator=(const List &s)
 	}
 	return *this;
 }
-List & List::operator=(List && s)
+List & List::operator=(List &&s)
 {	//Clear
 	if (this->m_size != 0) this->DELETE_ALL();
 	//Изымаем
@@ -229,14 +229,14 @@ void List::RECOPPY(const List &s)
 	{
 		if (typeid(prom->m_Data) == typeid (prom2->m_Data))
 		{
-			prom->m_Data = prom2->m_Data;
+			*prom->m_Data = *prom2->m_Data;
 			prom = prom->pNext;
 			prom2 = prom2->pNext;
 		}
 		else
 		{
 			DELETE_DATA(*prom);
-			prom->m_Data = prom2->m_Data->COPY();
+			*prom->m_Data = *prom2->m_Data->COPY();
 			prom = prom->pNext;
 			prom2 = prom2->pNext;
 		}
@@ -248,4 +248,4 @@ int List::get_size()
 {
 	return m_size;
 };
-*/
+*/ 

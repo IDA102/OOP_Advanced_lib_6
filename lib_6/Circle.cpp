@@ -34,7 +34,7 @@ bool Circle::operator==(const Shape * p_S)
 {
 	if (typeid(Circle) == typeid(*p_S))// Пришлось кастовать, т.к. нельзя перегрузить в Shape из-за типа параметра
 	{
-		const Circle *prom = dynamic_cast<const Circle*>(p_S);
+		const Circle *prom = static_cast<const Circle*>(p_S);
 		if ((q == prom->q) && (x1 == prom->x1) && (y1 == prom->y1) && (radius == prom->radius))	return true;
 		else																					return false;
 	}
